@@ -4,7 +4,11 @@ import readlineSync from 'readline-sync'
 const runBrainEven = () => {
   // Приветствие
   console.log('Welcome to the Brain Games!')
-  const name = readlineSync.question('May I have your name? ')
+
+  // ИСПРАВЛЕНИЕ: Разделяем вывод вопроса и чтение ввода
+  console.log('May I have your name?')
+  const name = readlineSync.question()
+
   console.log(`Hello, ${name}!`)
   console.log('Answer "yes" if the number is even, otherwise answer "no".')
 
@@ -19,7 +23,10 @@ const runBrainEven = () => {
 
     // Вопрос пользователю
     console.log(`Question: ${number}`)
-    const userAnswer = readlineSync.question('Your answer: ')
+
+    // ИСПРАВЛЕНИЕ: Разделяем вывод подсказки и чтение ввода
+    console.log('Your answer:')
+    const userAnswer = readlineSync.question()
 
     // Проверка ответа
     if (userAnswer === correctAnswer) {
